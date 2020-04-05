@@ -2,11 +2,12 @@
 import React from 'react';
 
 function App() {
-  // こんな風にも書ける2
-  const greeting = "Good Moirning!";
-  // Javascriptの予約後とかぶる
-  const dom = <h1 className="foo">{greeting}</h1>
-  return (dom);
+  return (
+    <div>
+      <h1>Test dayo</h1>
+      <input type="text" onChange={() => {console.log("changed!!")} } />
+    </div>
+  );
 }
 
 export default App;
