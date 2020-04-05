@@ -3,7 +3,11 @@ import React from 'react';
 function App() {
   // ここがJSX
   // 直感的に書ける。
-  return (<div>Hello, World!</div>);
+  return (
+    <div>
+      <h1>Hello, World!</h1>
+    </div>
+  );
   // JSXについては下記のように書ける。
   // return React.createElement(
   //   "div",
