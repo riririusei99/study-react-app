@@ -4,7 +4,7 @@ import React from 'react';
 const App = () => {
   return (
     <div>
-      <User name={"Taro"} />
+      <User name={"Taro"} age={10}/>
     </div>
   )
 }
@@ -12,7 +12,7 @@ const App = () => {
 const User = (props) => {
   return (
     <React.Fragment>
-     Hi, I am {props.name}!
+     Hi, I am {props.name}, and {props.age} years old!
     </ React.Fragment>
   )
 }
