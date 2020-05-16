@@ -1,19 +1,17 @@
+// JSXをトランスパイル時にReacを使うために必ず記述する。
 import React from 'react';
 
 function App() {
-  // ここがJSX
-  // 直感的に書ける。
+  // return で返すタグは一つではなければならない
+  // 余分なdiv等で囲わないように<React.Fragment>を使う
+  // for も予約後なのでhtmlForで書く
   return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
+    <React.Fragment>
+      <h1>Test dayo</h1>
+      <label htmlFor="bar">bar</label>
+      <input type="text" onChange={() => {console.log("changed!!")} } />
+    </React.Fragment>
   );
-  // JSXについては下記のように書ける。
-  // return React.createElement(
-  //   "div",
-  //   null,
-  //   "Hello, World!!"
-  // )
 }
 
 export default App;
