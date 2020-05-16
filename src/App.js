@@ -5,6 +5,8 @@ const App = () => {
   return (
     <div>
       <User name={"Taro"} age={10}/>
+      <br />
+      <User name={"Hanako"} age={5}/>
     </div>
   )
 }
