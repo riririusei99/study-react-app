@@ -1,19 +1,9 @@
-// JSXをトランスパイル時にReacを使うために必ず記述する。
 import React from 'react';
 
 const App = () => {
-  const profiles = [
-    { name: "Taro", age:10},
-    { name: "Hanako", age:5},
-    { name: "Noname"}
-  ]
   return (
     <div>
-      {
-        profiles.map((profile, index) => {
-          return <User name={profile.name} age={profile.age} key={index} />
-        })
-      }
+      <User name={"taro"} age={10}/>
     </div>
   )
 }
