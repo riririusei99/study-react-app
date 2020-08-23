@@ -1,3 +1,4 @@
+// Reducer = 「アプリケーションで扱う状態を変更する」責任を担う
 // Actionのタイプをimportしておく
 import { INCREMENT, DECREMENT} from '../actions'
 
