@@ -1,30 +1,28 @@
 import React,  {Component} from 'react';
+// connect 関数をimportする
+import { connect } from 'react-redux'
 
-const App = () => (<Counter></Counter>)
+// 必要なactioncreatorのincrement,decrementをimportする
+import { increment, decrement } from '../actions'
 
-class Counter extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {count: 0}
-  }
 
-  handlePlusButton = () => {
-    this.setState({ count: this.state.count + 1 })
-  }
-
-  handleMinusButton = () => {
-    this.setState({ count: this.state.count - 1 })
-  }
-
+class App extends Component {
   render() {
+    const props = this.props
     return (
       <React.Fragment>
-        <div> count: { this.state.count }</div>
-        <button onClick={this.handlePlusButton}>+1</button>
-        <button onClick={this.handleMinusButton}>-1</button>
+        <div> count: { props.value }</div>
+        <button onClick={props.increment}>+1</button>
+        <button onClick={props.decrement}>-1</button>
       </React.Fragment>
     )
   }
 }
 
-export default App;
+const mapStateToProps = state => ({ value: state.count.value })
+const mapDispatchToProps = dispatch => ({
+  increment: () => dispatch(increment()),
+  decrement: () => dispatch(decrement())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
