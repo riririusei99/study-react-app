@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 // Storeを作成するための関数をimportする
 import { createStore } from 'redux'
 // 作成したStoreを全コンポーネントに渡す機能を持つコンポーネントをimportする
-import { Provider} from 'react-dedux'
+import { Provider} from 'react-redux'
 // 作成したreducerをimportする
 import reducer from './reducers'
 import './index.css';
 // componentをimportする
 import App from './components/App';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 
 // storeを作成する
 const store = createStore(reducer)
@@ -18,7 +18,7 @@ const store = createStore(reducer)
 ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>
+  </Provider>,
   document.getElementById('root')
 );
 
