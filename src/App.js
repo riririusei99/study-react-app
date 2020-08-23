@@ -1,9 +1,17 @@
 import React from 'react';
 
 const App = () => {
+  const profiles = [
+    { name: "Taro", age: 10},
+    { name: "Hanako"},
+  ]
   return (
     <div>
-      <User name={"taro"} age={10}/>
+      {
+        profiles.map((profile) => {
+          return <User name={profile.name} age={profile.age}/>
+        })
+      }
     </div>
   )
 }
